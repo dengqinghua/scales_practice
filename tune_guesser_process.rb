@@ -12,7 +12,7 @@ class TuneGuesserProcess
 
   def current_string
     if random
-      rand(7)
+      rand(1..6)
     else
       @current_string
     end

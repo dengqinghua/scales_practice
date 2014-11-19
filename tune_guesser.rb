@@ -14,7 +14,7 @@ class TuneGuesser
   end
 
   def info
-    "#{string} string #{pin} pin"
+    "#{string} string #{pin} pin: #{::SCALES[string][pin]}"
   end
 
   alias_method :wrong?, :wrong
