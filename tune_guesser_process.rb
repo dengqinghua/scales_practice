@@ -18,6 +18,14 @@ class TuneGuesserProcess
     end
   end
 
+  def related_scales
+    if random
+      STRING_ALL
+    else
+      Object.const_get(:"STRING_#{current_string}")
+    end
+  end
+
   def get_string
     puts 'Which string?'
 

@@ -6,9 +6,11 @@
 !_TAG_PROGRAM_VERSION	5.9~svn20110310	//
 TuneGuesser	tune_guesser.rb	/^class TuneGuesser$/;"	c
 TuneGuesserProcess	tune_guesser_process.rb	/^class TuneGuesserProcess$/;"	c
+current_string	tune_guesser_process.rb	/^  def current_string$/;"	f	class:TuneGuesserProcess
 get_string	tune_guesser_process.rb	/^  def get_string$/;"	f	class:TuneGuesserProcess
 guess!	tune_guesser.rb	/^  def guess!$/;"	f	class:TuneGuesser
 info	tune_guesser.rb	/^  def info$/;"	f	class:TuneGuesser
 initialize	tune_guesser.rb	/^  def initialize(options = {})$/;"	f	class:TuneGuesser
-initialize	tune_guesser_process.rb	/^  def initialize$/;"	f	class:TuneGuesserProcess
+initialize	tune_guesser_process.rb	/^  def initialize(options:)$/;"	f	class:TuneGuesserProcess
+related_scales	tune_guesser_process.rb	/^  def related_scales$/;"	f	class:TuneGuesserProcess
 run!	tune_guesser_process.rb	/^  def run!$/;"	f	class:TuneGuesserProcess
