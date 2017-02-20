@@ -3,14 +3,35 @@
 !_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
-!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+!_TAG_PROGRAM_VERSION	5.8	//
+GuesserProcess	guesser_process.rb	/^class GuesserProcess$/;"	c
+PinGuesser	pin_guesser.rb	/^class PinGuesser$/;"	c
+PinGuesserProcess	guesser_process.rb	/^class PinGuesserProcess < GuesserProcess$/;"	c
+PinGuesserProcess	pin_guesser_process.rb	/^class PinGuesserProcess$/;"	c
+Tune	tunes.rb	/^class Tune$/;"	c
 TuneGuesser	tune_guesser.rb	/^class TuneGuesser$/;"	c
-TuneGuesserProcess	tune_guesser_process.rb	/^class TuneGuesserProcess$/;"	c
-current_string	tune_guesser_process.rb	/^  def current_string$/;"	f	class:TuneGuesserProcess
-get_string	tune_guesser_process.rb	/^  def get_string$/;"	f	class:TuneGuesserProcess
+TuneGuesserProcess	guesser_process.rb	/^class TuneGuesserProcess < GuesserProcess$/;"	c
+calculate_by_distance	tunes.rb	/^    def calculate_by_distance(distance)$/;"	f	class:Tune
+current_string	guesser_process.rb	/^  def current_string$/;"	f	class:GuesserProcess
+current_string	pin_guesser_process.rb	/^  def current_string$/;"	f	class:PinGuesserProcess
+fetch_process	practice.rb	/^def fetch_process$/;"	f
+fetch_strings	guesser_process.rb	/^  def fetch_strings(options)$/;"	f	class:GuesserProcess
+fetch_strings	pin_guesser_process.rb	/^  def fetch_strings(options)$/;"	f	class:PinGuesserProcess
+generate	tunes.rb	/^    def generate$/;"	f	class:Tune
+get_distance	tunes.rb	/^    def get_distance(tune)$/;"	f	class:Tune
+get_string	guesser_process.rb	/^  def get_string$/;"	f	class:GuesserProcess
+get_string	pin_guesser_process.rb	/^  def get_string$/;"	f	class:PinGuesserProcess
+guess!	pin_guesser.rb	/^  def guess!$/;"	f	class:PinGuesser
 guess!	tune_guesser.rb	/^  def guess!$/;"	f	class:TuneGuesser
+info	pin_guesser.rb	/^  def info$/;"	f	class:PinGuesser
 info	tune_guesser.rb	/^  def info$/;"	f	class:TuneGuesser
+initialize	guesser_process.rb	/^  def initialize(options: nil)$/;"	f	class:GuesserProcess
+initialize	pin_guesser.rb	/^  def initialize(options = {})$/;"	f	class:PinGuesser
+initialize	pin_guesser_process.rb	/^  def initialize(options: nil)$/;"	f	class:PinGuesserProcess
 initialize	tune_guesser.rb	/^  def initialize(options = {})$/;"	f	class:TuneGuesser
-initialize	tune_guesser_process.rb	/^  def initialize(options:)$/;"	f	class:TuneGuesserProcess
-related_scales	tune_guesser_process.rb	/^  def related_scales$/;"	f	class:TuneGuesserProcess
-run!	tune_guesser_process.rb	/^  def run!$/;"	f	class:TuneGuesserProcess
+related_scales	guesser_process.rb	/^  def related_scales$/;"	f	class:GuesserProcess
+related_scales	pin_guesser_process.rb	/^  def related_scales$/;"	f	class:PinGuesserProcess
+run!	guesser_process.rb	/^  def run!$/;"	f	class:GuesserProcess
+run!	guesser_process.rb	/^  def run!$/;"	f	class:PinGuesserProcess
+run!	guesser_process.rb	/^  def run!$/;"	f	class:TuneGuesserProcess
+run!	pin_guesser_process.rb	/^  def run!$/;"	f	class:PinGuesserProcess
