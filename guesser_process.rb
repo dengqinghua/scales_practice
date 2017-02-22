@@ -16,7 +16,7 @@ class GuesserProcess
     if options && options[:only]
       options[:only].split(',').map(&:to_i)
     else
-      (0..6).to_a
+      (1..6).to_a
     end
   end
 

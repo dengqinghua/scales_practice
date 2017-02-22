@@ -8,7 +8,6 @@ class Tune
     6 => 8
   }
 
-
   DISTANCE = {
     '1'  => 0,
     '#1' => 1,
