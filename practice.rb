@@ -1,35 +1,32 @@
 require_relative 'guesser_process'
 
-type, only, _ = ARGV
-
-process = \
-  if type == 't'
-    TuneGuesserProcess.new(only: only)
-  elsif type == 'p'
-    PinGuesserProcess.new(only: only)
-  else
-    raise '请输入 t 或者 p, t代表tune, p代表pin'
+class Pracice
+  def initialize(process)
+    @process = process
   end
 
-process.run!
+  def run!
+    @process.run!
 
-puts '====RESULTS===='
+    puts '====RESULTS===='
 
-if process.wrong_guesses.empty?
-  puts 'Congratulations! All right!'
-else
-  puts 'wrong_guesses:'
-  puts process.wrong_guesses
+    if @process.wrong_guesses.empty?
+      puts '恭喜! 全对!'
+    else
+      puts '错误的部分如下:'
+      puts @process.wrong_guesses
+    end
+
+    if @process.slow_guesses.empty?
+      puts '恭喜! 全部都很快!'
+    else
+      puts '慢速的部分如下:'
+      puts @process.slow_guesses
+    end
+
+    puts '====RESULTS===='
+
+    puts '相关的品位图如下'
+    puts @process.related_scales
+  end
 end
-
-if process.slow_guesses.empty?
-  puts 'Congratulations! All guesses are quick!'
-else
-  puts 'slow_guesses:'
-  puts process.slow_guesses
-end
-
-puts '====RESULTS===='
-
-puts 'Related Scales'
-puts process.related_scales
