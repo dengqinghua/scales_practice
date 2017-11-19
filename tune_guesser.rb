@@ -1,7 +1,7 @@
 require_relative 'scales'
 
 class TuneGuesser
-  attr_reader :wrong, :slow, :slow_guess, :string, :pin
+  attr_reader :wrong, :slow, :slow_guess, :string, :pin, :scales
 
   SET     = 24
   TIMEOUT = 3
@@ -11,6 +11,7 @@ class TuneGuesser
     @pin    = options[:pin].to_i
     @wrong  = false
     @slow   = false
+    @scales = options[:scales]
   end
 
   def info
@@ -26,7 +27,7 @@ class TuneGuesser
     loop do
       tune = $stdin.gets.strip
 
-      if ::SCALES[string][pin].include?(tune)
+      if scales[string][pin].include?(tune)
         if Time.now - start_guess_time > TIMEOUT
           @slow = true
           puts '正确, 但是太慢了!'

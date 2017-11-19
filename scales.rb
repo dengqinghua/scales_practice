@@ -171,7 +171,7 @@ STRING_5 = %q{
 12 o| 6
 }
 
-STRING_6 = STRING_5
+STRING_6 = STRING_1
 
 STRING_ALL = %q{
 0   - 3  6  2  5  7  3

@@ -1,6 +1,5 @@
 require_relative 'tune_guesser'
 require_relative 'pin_guesser'
-require_relative 'tunes'
 
 class GuesserProcess
   attr_reader :wrong_guesses, :slow_guesses
@@ -16,7 +15,7 @@ class GuesserProcess
     if options && options[:only]
       options[:only].split(',').map(&:to_i)
     else
-      (1..6).to_a
+      (1..instument_string_count).to_a
     end
   end
 
@@ -29,14 +28,18 @@ class GuesserProcess
   end
 
   def related_scales
-    STRING_ALL
+    raise "NOT IMPLEMENT ERROR"
+  end
+
+  def scales
+    raise "NOT IMPLEMENT ERROR"
   end
 
   def get_string
     puts '请问输入哪一根弦?'
 
     loop do
-      if ::SCALES.keys.include?(string = $stdin.gets.to_i)
+      if scales.keys.include?(string = $stdin.gets.to_i)
         @current_string = string
         break
       else
@@ -57,9 +60,9 @@ class PinGuesserProcess < GuesserProcess
     TuneGuesser::SET.times do |time|
       puts "----------------"
       puts "第 #{time + 1} 次测试"
-      puts "音 #{tune = ::Tune::ALL.sample} 在 第 #{string = current_string} 弦 是 第几品?"
+      puts "音 #{tune = all_tune.sample} 在 第 #{string = current_string} 弦 是 第几品?"
 
-      guesser = PinGuesser.new(string: string, tune: tune)
+      guesser = PinGuesser.new(string: string, tune: tune, tune_info: tune_info)
       guesser.guess!
 
       @wrong_guesses << guesser.info if guesser.wrong?
@@ -75,7 +78,7 @@ class TuneGuesserProcess < GuesserProcess
       puts "第 #{time + 1} 次测试"
       puts "#{string = current_string} 弦 第 #{pin = rand(13)} 品 什么音?"
 
-      guesser = TuneGuesser.new(string: string, pin: pin)
+      guesser = TuneGuesser.new(string: string, pin: pin, scales: scales)
       guesser.guess!
 
       @wrong_guesses << guesser.info if guesser.wrong?

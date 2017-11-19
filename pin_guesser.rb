@@ -1,7 +1,7 @@
 require_relative 'scales'
 
 class PinGuesser
-  attr_reader :wrong, :slow, :slow_guess, :string, :pin, :tune
+  attr_reader :wrong, :slow, :slow_guess, :string, :pin, :tune, :tune_info
 
   SET     = 24
   TIMEOUT = 3
@@ -16,14 +16,15 @@ class PinGuesser
   # 即: 2弦4品为 b3
   #
   def initialize(options = {})
-    @string = options[:string].to_i
-    @tune   = options[:tune].to_s
-    @wrong  = false
-    @slow   = false
+    @string    = options[:string].to_i
+    @tune      = options[:tune].to_s
+    @wrong     = false
+    @slow      = false
+    @tune_info = options[:tune_info]
   end
 
   def info
-    "Tune #{tune} AT string #{string} #{::Tune::INFO[tune][string]}"
+    "音 #{tune} 在 第 #{string} 弦: #{tune_info[tune][string]}"
   end
 
   alias_method :wrong?, :wrong
@@ -35,17 +36,17 @@ class PinGuesser
     loop do
       pin = $stdin.gets.strip.to_i
 
-      if ::Tune::INFO[tune][string] && ::Tune::INFO[tune][string].include?(pin)
+      if tune_info[tune][string] && tune_info[tune][string].include?(pin)
         if Time.now - start_guess_time > TIMEOUT
           @slow = true
-          puts 'Yep but Slow!'
+          puts '正确, 但是太慢了!'
         else
-          puts 'Yep and Quick!'
+          puts '正确, 很好!'
         end
 
         break
       else
-        puts 'NOPE!'
+        puts '错误!'
         @wrong = true
       end
     end

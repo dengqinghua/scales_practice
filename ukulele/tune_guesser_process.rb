@@ -1,18 +1,18 @@
 require_relative '../guesser_process'
 require_relative 'scales'
 
-module Guitar
+module Ukulele
   class TuneGuesserProcess < ::TuneGuesserProcess
     def instument_string_count
-      6
+      4
     end
 
     def related_scales
-      Guitar::STRING_ALL
+      Ukulele::STRING_ALL
     end
 
     def scales
-      Guitar::SCALES
+      Ukulele::SCALES
     end
   end
 end

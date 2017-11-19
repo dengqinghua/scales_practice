@@ -1,13 +1,4 @@
 class Tune
-  BASE = {
-    1 => 8, # 1弦8品
-    2 => 1,
-    3 => 5,
-    4 => 10,
-    5 => 3,
-    6 => 8
-  }
-
   DISTANCE = {
     '1'  => 0,
     '#1' => 1,
@@ -40,12 +31,12 @@ class Tune
     #   根据距离, 计算这个距离每根弦对应的品位应该是多少
     #
     # ==== Example
-    #   其中BASE是 音符`Duo`在吉他指板上的前十二品的所有位置
+    #   其中base是 音符`Duo`在吉他指板上的前十二品的所有位置
     #
     #   Tune.calculate_by_distance(1)
     #
     def calculate_by_distance(distance)
-      BASE.inject({}) do |result, (string, pin)|
+      base.inject({}) do |result, (string, pin)|
         now_pin = pin + distance
         pins    = [now_pin]
 
@@ -83,7 +74,14 @@ class Tune
         result.merge tune => calculate_by_distance(distance)
       end
     end
-  end
 
-  INFO = generate
+    # duo所在的位置的hash, 需要子类实现
+    def base
+      raise "NOT IMPLEMENT"
+    end
+
+    def info
+      @info ||= generate
+    end
+  end
 end
