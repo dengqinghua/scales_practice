@@ -33,18 +33,18 @@ class GuesserProcess
   end
 
   def get_string
-    puts 'Which string?'
+    puts '请问输入哪一根弦?'
 
     loop do
       if ::SCALES.keys.include?(string = $stdin.gets.to_i)
         @current_string = string
         break
       else
-        puts 'Wrong input!'
+        puts '输入错误!'
       end
     end
 
-    puts "You have input string: #{@current_string}"
+    puts "您输入了弦: #{@current_string}"
     puts "=========================\n"
   end
 
@@ -56,8 +56,8 @@ class PinGuesserProcess < GuesserProcess
   def run!
     TuneGuesser::SET.times do |time|
       puts "----------------"
-      puts "The #{time} time GUESS"
-      puts "The tune #{tune = ::Tune::ALL.sample} at string #{string = current_string} is ?"
+      puts "第 #{time + 1} 次测试"
+      puts "音 #{tune = ::Tune::ALL.sample} 在 第 #{string = current_string} 弦 是 第几品?"
 
       guesser = PinGuesser.new(string: string, tune: tune)
       guesser.guess!
@@ -72,8 +72,8 @@ class TuneGuesserProcess < GuesserProcess
   def run!
     TuneGuesser::SET.times do |time|
       puts "----------------"
-      puts "The #{time} time GUESS"
-      puts "The #{string = current_string} string #{pin = rand(13)} pin is ?"
+      puts "第 #{time + 1} 次测试"
+      puts "#{string = current_string} 弦 第 #{pin = rand(13)} 品 什么音?"
 
       guesser = TuneGuesser.new(string: string, pin: pin)
       guesser.guess!
@@ -83,4 +83,3 @@ class TuneGuesserProcess < GuesserProcess
     end
   end
 end
-

@@ -100,30 +100,24 @@ SCALES = {
 
 Usage
 -----
+### 测试音符
 
 ```shell
-ruby practice.rb
+ruby practice.rb t
 
-# Ask which string you want to test
-which string?
+5 弦 第 8 品 什么音?
 
-# The string is fixed, and the pin is randomed
-The 1 string 9 pin is ?
-
-# We should output the right tune of 1 string 9 pin
-b2
+# 需要输入正确答案
+4
 ```
 
-OR
+### 测试品位位置
 
 ```shell
-ruby practice.rb r
+ruby practice.rb p
 
-# The string is fixed, and the pin is randomed
+音 2 在 第 3 弦 是 第几品?
 
-The 1 string 9 pin is ?
-b2
-
-The 3 string 2 pin is ?
-6
+# 需要输入正确答案
+7
 ```
