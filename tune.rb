@@ -49,7 +49,7 @@ class Tune
     end
 
     ##
-    # ==== Returns
+    # ==== Description
     # Tune.generate
     #
     # {

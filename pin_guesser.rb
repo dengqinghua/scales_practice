@@ -1,9 +1,6 @@
-require_relative 'scales'
-
 class PinGuesser
   attr_reader :wrong, :slow, :slow_guess, :string, :pin, :tune, :tune_info
 
-  SET     = 24
   TIMEOUT = 3
 
   ##

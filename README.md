@@ -207,7 +207,7 @@ Usage
 ruby guitar/practice.rb t  # 测试吉他
 ruby ukulele/practice.rb t # 测试尤克里里
 
-5 弦 第 8 品 什么音?
+5 弦 第 8 品 是 什么音?
 
 # 需要输入正确答案, 以吉他为例
 4

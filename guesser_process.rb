@@ -50,14 +50,11 @@ class GuesserProcess
     puts "您输入了弦: #{@current_string}"
     puts "=========================\n"
   end
-
-  def run!
-  end
 end
 
 class PinGuesserProcess < GuesserProcess
   def run!
-    TuneGuesser::SET.times do |time|
+    24.times do |time|
       puts "----------------"
       puts "第 #{time + 1} 次测试"
       puts "音 #{tune = all_tune.sample} 在 第 #{string = current_string} 弦 是 第几品?"
@@ -73,10 +70,10 @@ end
 
 class TuneGuesserProcess < GuesserProcess
   def run!
-    TuneGuesser::SET.times do |time|
+    24.times do |time|
       puts "----------------"
       puts "第 #{time + 1} 次测试"
-      puts "#{string = current_string} 弦 第 #{pin = rand(13)} 品 什么音?"
+      puts "#{string = current_string} 弦 第 #{pin = rand(13)} 品 是 什么音?"
 
       guesser = TuneGuesser.new(string: string, pin: pin, scales: scales)
       guesser.guess!

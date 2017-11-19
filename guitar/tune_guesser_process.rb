@@ -1,18 +1,7 @@
-require_relative '../guesser_process'
-require_relative 'scales'
+require_relative 'tune_utils'
 
 module Guitar
   class TuneGuesserProcess < ::TuneGuesserProcess
-    def instument_string_count
-      6
-    end
-
-    def related_scales
-      Guitar::STRING_ALL
-    end
-
-    def scales
-      Guitar::SCALES
-    end
+    include TuneUtils
   end
 end

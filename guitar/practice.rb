@@ -6,9 +6,9 @@ type, only, _ = ARGV
 
 process = \
   if type == 't'
-    Ukulele::TuneGuesserProcess.new(only: only)
+    Guitar::TuneGuesserProcess.new(only: only)
   elsif type == 'p'
-    Ukulele::PinGuesserProcess.new(only: only)
+    Guitar::PinGuesserProcess.new(only: only)
   else
     raise '请输入 t 或者 p, t代表tune, p代表pin'
   end

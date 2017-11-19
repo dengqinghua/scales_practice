@@ -1,9 +1,6 @@
-require_relative 'scales'
-
 class TuneGuesser
   attr_reader :wrong, :slow, :slow_guess, :string, :pin, :scales
 
-  SET     = 24
   TIMEOUT = 3
 
   def initialize(options = {})
@@ -15,7 +12,7 @@ class TuneGuesser
   end
 
   def info
-    "#{string} 弦 第 #{pin} 品: #{::SCALES[string][pin]}"
+    "#{string} 弦 第 #{pin} 品: #{scales[string][pin]}"
   end
 
   alias_method :wrong?, :wrong
