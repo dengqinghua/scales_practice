@@ -1,6 +1,32 @@
 ScalesPractice
 =============
 
+Usage
+-----
+### 测试音符
+
+```shell
+ruby guitar/practice.rb t  # 测试吉他
+ruby ukulele/practice.rb t # 测试尤克里里
+
+5 弦 第 8 品 是 什么音?
+
+# 需要输入正确答案, 以吉他为例
+4
+```
+
+### 测试品位位置
+
+```shell
+ruby guitar/practice.rb p  # 测试吉他
+ruby ukulele/practice.rb p # 测试尤克里里
+
+音 2 在 第 3 弦 是 第几品?
+
+# 需要输入正确答案, 以吉他为例
+7
+```
+
 音阶排列
 --------
 ### Guitar
@@ -196,31 +222,4 @@ SCALES = {
 10 o| 4  b7 2  5
 11  | b5 7  b3 b6
 12 o| 5  1  3  6
-```
-
-
-Usage
------
-### 测试音符
-
-```shell
-ruby guitar/practice.rb t  # 测试吉他
-ruby ukulele/practice.rb t # 测试尤克里里
-
-5 弦 第 8 品 是 什么音?
-
-# 需要输入正确答案, 以吉他为例
-4
-```
-
-### 测试品位位置
-
-```shell
-ruby guitar/practice.rb p  # 测试吉他
-ruby ukulele/practice.rb p # 测试尤克里里
-
-音 2 在 第 3 弦 是 第几品?
-
-# 需要输入正确答案, 以吉他为例
-7
 ```
